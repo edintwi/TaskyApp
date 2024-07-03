@@ -15,6 +15,7 @@
 		DD8AA6CC2C34CE6200E33AF5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8AA6CB2C34CE6200E33AF5 /* Constants.swift */; };
 		DD8AA6CF2C34D34A00E33AF5 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8AA6CE2C34D34A00E33AF5 /* UIViewController+.swift */; };
 		DD8AA6D42C3580AE00E33AF5 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8AA6D32C3580AE00E33AF5 /* TasksViewController.swift */; };
+		DD8AA6D72C358A3400E33AF5 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8AA6D62C358A3400E33AF5 /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		DD8AA6CB2C34CE6200E33AF5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DD8AA6CE2C34D34A00E33AF5 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		DD8AA6D32C3580AE00E33AF5 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+		DD8AA6D62C358A3400E33AF5 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		DD8AA6B52C34CB1300E33AF5 /* TaskyApp */ = {
 			isa = PBXGroup;
 			children = (
+				DD8AA6D52C358A1E00E33AF5 /* Models */,
 				DD8AA6D02C35803300E33AF5 /* ViewControllers */,
 				DD8AA6CD2C34D31100E33AF5 /* Extensions */,
 				DD8AA6CA2C34CE4F00E33AF5 /* Utils */,
@@ -95,6 +98,14 @@
 				DD8AA6D32C3580AE00E33AF5 /* TasksViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DD8AA6D52C358A1E00E33AF5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DD8AA6D62C358A3400E33AF5 /* Task.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +183,7 @@
 				DD8AA6CF2C34D34A00E33AF5 /* UIViewController+.swift in Sources */,
 				DD8AA6B92C34CB1300E33AF5 /* SceneDelegate.swift in Sources */,
 				DD8AA6CC2C34CE6200E33AF5 /* Constants.swift in Sources */,
+				DD8AA6D72C358A3400E33AF5 /* Task.swift in Sources */,
 				DD8AA6D42C3580AE00E33AF5 /* TasksViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

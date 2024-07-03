@@ -8,8 +8,6 @@
 import UIKit
 
 class TasksViewController: UIViewController {
-
-    private let tasks : [String] = ["Fazer café", "Estudar", "Trabalho"]
     
     private lazy var tableView : UITableView = {
         let tableView = UITableView()
@@ -57,8 +55,10 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         var content = cell.defaultContentConfiguration()
-        content.text =  tasks[indexPath.row]
+        content.text =  tasks[indexPath.row].title
+        content.secondaryText = tasks[indexPath.row].description ?? ""
         cell.contentConfiguration = content
+        
         return cell
     }
     
