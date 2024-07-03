@@ -9,10 +9,21 @@ import UIKit
 
 class TasksViewController: UIViewController {
     
+    private lazy var ilustrationImageView : UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: AssetsConstants.taskyIlustration))
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    } ()
+    
     private lazy var tableView : UITableView = {
         let tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.layer.cornerRadius = 24
+        
+        let header = TasksTableViewHeader(frame:  .init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 64))
+        tableView.tableHeaderView = header
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     } ()
@@ -34,12 +45,16 @@ class TasksViewController: UIViewController {
     }
     
     private func setHierarchy() {
+        view.addSubview(ilustrationImageView)
         view.addSubview(tableView)
     }
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            ilustrationImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            ilustrationImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            tableView.topAnchor.constraint(equalTo: ilustrationImageView.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
