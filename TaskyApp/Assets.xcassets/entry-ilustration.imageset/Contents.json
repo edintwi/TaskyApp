@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "Ilustração Abertura.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "Logo branco.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
+  }
+}
