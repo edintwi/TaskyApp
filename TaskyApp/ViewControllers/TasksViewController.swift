@@ -23,6 +23,7 @@ class TasksViewController: UIViewController {
         tableView.layer.cornerRadius = 24
         
         let header = TasksTableViewHeader(frame:  .init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 64))
+        header.delegate = self
         tableView.tableHeaderView = header
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
@@ -85,4 +86,16 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            print("delete")
+        }
+    }
+}
+
+extension TasksViewController: TasksTableViewHeaderDelegate {
+     func didTapAddTaskButton() {
+        let addTaskVC = AddTaskViewController()
+        navigationController?.present(addTaskVC, animated: true)
+    }
 }

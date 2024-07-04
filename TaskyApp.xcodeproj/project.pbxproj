@@ -17,6 +17,7 @@
 		DD8AA6D42C3580AE00E33AF5 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8AA6D32C3580AE00E33AF5 /* TasksViewController.swift */; };
 		DD8AA6D72C358A3400E33AF5 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8AA6D62C358A3400E33AF5 /* Task.swift */; };
 		DD8AA6DA2C35B13000E33AF5 /* TasksTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8AA6D92C35B13000E33AF5 /* TasksTableViewHeader.swift */; };
+		DD8AA7072C37410500E33AF5 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8AA7062C37410500E33AF5 /* AddTaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		DD8AA6D32C3580AE00E33AF5 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		DD8AA6D62C358A3400E33AF5 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		DD8AA6D92C35B13000E33AF5 /* TasksTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewHeader.swift; sourceTree = "<group>"; };
+		DD8AA7062C37410500E33AF5 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				DD8AA6BA2C34CB1300E33AF5 /* HomeViewController.swift */,
 				DD8AA6D32C3580AE00E33AF5 /* TasksViewController.swift */,
+				DD8AA7062C37410500E33AF5 /* AddTaskViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				DD8AA6CC2C34CE6200E33AF5 /* Constants.swift in Sources */,
 				DD8AA6D72C358A3400E33AF5 /* Task.swift in Sources */,
 				DD8AA6D42C3580AE00E33AF5 /* TasksViewController.swift in Sources */,
+				DD8AA7072C37410500E33AF5 /* AddTaskViewController.swift in Sources */,
 				DD8AA6DA2C35B13000E33AF5 /* TasksTableViewHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

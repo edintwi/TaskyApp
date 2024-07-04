@@ -7,8 +7,13 @@
 
 import UIKit
 
+protocol TasksTableViewHeaderDelegate : AnyObject {
+    func didTapAddTaskButton()
+}
+
 class TasksTableViewHeader: UIView {
     
+    weak var delegate: TasksTableViewHeaderDelegate?
     // MARK:  - UI
     private lazy var headerLabel : UILabel = {
         let label = UILabel(frame: .zero)
@@ -23,10 +28,14 @@ class TasksTableViewHeader: UIView {
         let image = UIImage(systemName: "plus")
         
         button.setImage(image, for: .normal)
+        button.addTarget(self, action: #selector(didTapAddTaskButton), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     } ()
     
+    @objc func didTapAddTaskButton() {
+        delegate?.didTapAddTaskButton()
+    }
     override init(frame: CGRect) {
         super.init(frame: frame)
         setHierarchy()
