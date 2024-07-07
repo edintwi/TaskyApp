@@ -9,6 +9,8 @@ import UIKit
 
 class AddTaskViewController: UIViewController {
     
+    weak var delegate : TaskDelegate?
+    
     private lazy var taskAddLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.text = "Adicionar tarefa"
@@ -62,8 +64,23 @@ class AddTaskViewController: UIViewController {
         let button = UIButton(type: .system)
         
         button.setTitle("Salvar", for: .normal)
+        button.addTarget(self, action: #selector(didTapSaveTaskButton), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
+    } ()
+    
+    private lazy var alertErrorFeedback : UIAlertController = {
+        let alert: UIAlertController = UIAlertController(title: "Erro ao criar tarefa", message: "Precisa de um titulo", preferredStyle: .alert)
+        
+        let action1 : UIAlertAction = UIAlertAction(title: "ok", style: .default){
+            (action) in
+            alert.dismiss(animated: true)
+        }
+        
+        alert.addAction(action1)
+        
+       
+        return alert
     } ()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,9 +131,16 @@ class AddTaskViewController: UIViewController {
         ])
     }
     
-    // MARK: - Navigation
     
     @objc func didTapSaveTaskButton() {
-        
+        guard let title = taskTitleTextField.text, !title.isEmpty else {
+ 
+            self.present(alertErrorFeedback, animated: true, completion: nil)
+            return
+        }
+        let newTask = Task(title: title, description: taskDescriptionTextField.text)
+        tasks.append(newTask)
+        delegate?.didAddTask()
+        dismiss(animated: true)
     }
-}
+}    
