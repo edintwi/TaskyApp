@@ -8,7 +8,7 @@
 import Foundation
 
 class TaskyRepository{
-    private init () {}
+    init () {}
     
     var tasks: [Task] = []
     

@@ -35,6 +35,15 @@ class TasksViewController: UIViewController {
         return tableView
     } ()
     
+    private lazy var tasksEmptyLabel: UILabel = {
+        let emptyLabel = UILabel(frame: .zero)
+        emptyLabel.font = .systemFont(ofSize: 14, weight: .bold)
+        emptyLabel.text = "Vamos começar o dia?"
+        emptyLabel.isHidden = !taskyRepository.tasks.isEmpty
+        emptyLabel.translatesAutoresizingMaskIntoConstraints = false
+        return emptyLabel
+    } ()
+    
     private func setupNavigationBar() {
         navigationItem.hidesBackButton = true
     }
@@ -63,6 +72,7 @@ class TasksViewController: UIViewController {
     private func setHierarchy() {
         view.addSubview(ilustrationImageView)
         view.addSubview(tableView)
+        tableView.addSubview(tasksEmptyLabel)
     }
     
     private func setupConstraints() {
@@ -73,7 +83,10 @@ class TasksViewController: UIViewController {
             tableView.topAnchor.constraint(equalTo: ilustrationImageView.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        
+            tasksEmptyLabel.centerYAnchor.constraint(equalTo: tableView.centerYAnchor),
+            tasksEmptyLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
     }
     
@@ -133,6 +146,7 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             taskyRepository.removeTask(at: indexPath.row)
+            tasksEmptyLabel.isHidden = !taskyRepository.tasks.isEmpty
             tableView.reloadData()
         }
     }
@@ -149,6 +163,7 @@ extension TasksViewController: TasksTableViewHeaderDelegate {
 extension TasksViewController: TaskDelegate {
     func didAddTask(newTask: Task) {
         taskyRepository.addTask(newTask: newTask)
+        tasksEmptyLabel.isHidden = !taskyRepository.tasks.isEmpty
         tableView.reloadData()
     }
 }
