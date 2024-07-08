@@ -139,8 +139,8 @@ class AddTaskViewController: UIViewController {
             return
         }
         let newTask = Task(title: title, description: taskDescriptionTextField.text)
-        tasks.append(newTask)
-        delegate?.didAddTask()
+        
+        delegate?.didAddTask(newTask: newTask)
         dismiss(animated: true)
     }
 }    

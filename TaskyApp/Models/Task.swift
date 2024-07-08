@@ -12,9 +12,3 @@ struct Task {
     var description: String?
     var isCompleted: Bool = false
 }
-
-var tasks : [Task] = [
-    Task(title: "Fazer café", description: "Fazer até 12:00hrs"),
-    Task(title: "Lavar carro", description: "Com sabao"),
-    Task(title: "Regar plantas")
-]
