@@ -19,6 +19,7 @@
 		DD8AA6DA2C35B13000E33AF5 /* TasksTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8AA6D92C35B13000E33AF5 /* TasksTableViewHeader.swift */; };
 		DD8AA7072C37410500E33AF5 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8AA7062C37410500E33AF5 /* AddTaskViewController.swift */; };
 		DDC0C12C2C3C298000A947DD /* TaskyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC0C12B2C3C298000A947DD /* TaskyRepository.swift */; };
+		DDC0C12F2C3C433700A947DD /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC0C12E2C3C433700A947DD /* UserDefaultsStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		DD8AA6D92C35B13000E33AF5 /* TasksTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewHeader.swift; sourceTree = "<group>"; };
 		DD8AA7062C37410500E33AF5 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		DDC0C12B2C3C298000A947DD /* TaskyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskyRepository.swift; sourceTree = "<group>"; };
+		DDC0C12E2C3C433700A947DD /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		DD8AA6B52C34CB1300E33AF5 /* TaskyApp */ = {
 			isa = PBXGroup;
 			children = (
+				DDC0C12D2C3C432200A947DD /* Storage */,
 				DDC0C12A2C3C295200A947DD /* Repository */,
 				DD8AA6D82C35B11100E33AF5 /* Views */,
 				DD8AA6D52C358A1E00E33AF5 /* Models */,
@@ -131,6 +134,14 @@
 				DDC0C12B2C3C298000A947DD /* TaskyRepository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		DDC0C12D2C3C432200A947DD /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				DDC0C12E2C3C433700A947DD /* UserDefaultsStorage.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +224,7 @@
 				DD8AA7072C37410500E33AF5 /* AddTaskViewController.swift in Sources */,
 				DDC0C12C2C3C298000A947DD /* TaskyRepository.swift in Sources */,
 				DD8AA6DA2C35B13000E33AF5 /* TasksTableViewHeader.swift in Sources */,
+				DDC0C12F2C3C433700A947DD /* UserDefaultsStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
